@@ -1,0 +1,65 @@
+
+
+
+DROP SCHEMA IF EXIST muebleria;
+
+CREATE SCHEMA muebleria;
+
+USE muebleria;
+
+CREATE TABLE usuarios(
+usuario VARCHAR(20) NOT NULL,
+nombre VARCHAR(20),
+apellidos VARCHAR(20),
+contrasenia VARCHAR(8) NOT NULL,
+puesto SMALLINT(1) NOT NULL,
+PRIMARY KEY(usuario));
+
+CREATE TABLE mueble(
+nombre VARCHAR(20) NOT NULL,
+precio DOUBLE NOT NULL,
+);
+
+CREATE TABLE pieza (
+tipo VARCHAR(20) NOT NULL,
+costo DOUBLE NOT NULL, 
+cantidad SMALLINT(4),
+PRIMARY KEY(tipo, costo));
+
+CREATE TABLE cliente(
+nombre VARCHAR(20) NOT NULL,
+apellido VARCHAR(20) NOT NULL,
+nit VARCHAR(9) NOT NULL,
+domiciliio (25), 
+ciudad (15) NOT NULL
+departamento VARCHAR(15)
+PRIMARY KEY (nit));
+
+CREATE TABLE ensamble_mueble(
+id INT NOT NULL,
+nombre_mueble VARCHAR(20) NOT NULL,
+usuario_creador VARCHAR(20) NOT NULL,
+dia_creado DATE NOT NULL,
+PRIMARY KEY (ID),
+CONSTRAING fk_nombre_mueble FOREIGN KEY (nombre_mueble)
+REFERENCES muebleria.mueble(nombre));
+
+CREATE TABLE ensamble_piezas(
+mueble VARCHAR(20) NOT NULL,
+pieza VARCHAR(20) NOT NULL,
+cantidad TINYINT(1) NOT NULL,
+CONSTRAING fk_mueble FOREIGN KEY (mueble)
+REFERENCES muebleria.mueble(nombre),
+CONSTRAING fk_pieza FOREIGN KEY (pieza)
+REFERENCES muebleria.pieza(tipo));
+
+CREATE TABLE compras (
+id INT NOT NULL,
+nit VARCHAR(9) NOT NULL, 
+cliente VARCHAR(20) NOT NULL,
+fecha DATE NOT NULL,
+estado BOOLEAN(1),
+mueble VARCHAR(20),
+PRIMARY KEY (ID),
+
+);

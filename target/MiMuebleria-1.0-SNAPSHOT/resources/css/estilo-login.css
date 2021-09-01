@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: inherit;
+}
+
+body{
+	background-image: url(../imagenes/fondo.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.all{
+	width: 100%;
+	padding: 20px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.sesion{
+
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+	position: realtive;
+
+}
+
+.box-all{
+	width: 100%;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+	backdrop-filter: blur(10px);
+	background-color: rgba( 79, 14, 0 , 0.5);
+}
+
+.box-all div{
+	margin: 100px 40px;
+	color: khaki;
+	transition: all 600ms;
+}
+
+.box-all div p,
+.box-all div button{
+	margin-top: 30px;
+
+}
+
+.box-all h3{
+	font-weight: 400;
+	font-size: 27px;
+
+}
+
+.box-all button{
+	padding: 10px 40px;
+	border: 2px solid darkorange;
+	background-color: dimgray;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	transition: all 300ms;
+}
+
+.box-all button:hover{
+	background: transparent ;
+}
+
+.login-start{
+	width: 100%;
+	max-width: 380px;
+	position: relative;
+	top: -400px ;
+	left: 20px;
+	align-items: center;
+}
+
+.login-start form{
+	width: 100%;
+	padding: 80px 20px;
+	background: rgba(124, 30, 0, 1.0);
+	position: absolute;
+	border-radius: 15px;
+}
+
+.login-start form h2{
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: khaki;
+}
+
+.login-start form input{
+	width: 100%;
+	margin-top: 30px;
+	padding: 15px;
+	border: none;
+	background: rgba( 151, 39, 3 , 1.0);
+	font-size: 15px;
+	outline: none;
+	color: khaki;
+}
+
+.login-start form button{
+	padding: 8px 35px;
+	margin-top: 25px;
+	border: none;
+	font-size: 15px;
+	cursor: pointer;
+	outline: none;
+}
